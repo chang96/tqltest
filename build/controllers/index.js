@@ -6,9 +6,9 @@ const calculateAgeController = function (req, res) {
     let dob = String(req.query.dob);
     let age = (0, utils_1.calculateAge)(dob);
     let rgx = /years$|year$/;
-    if (age.match(rgx))
+    if (age)
         res.status(200).json({ "statusCode": 200, "age": age });
     else
-        res.status(400).json({ "statusCode": 400, "errorMsg": age });
+        res.status(400).json({ "statusCode": 400, "age": `${age}`, "error": "invalid age parameter" });
 };
 exports.calculateAgeController = calculateAgeController;
