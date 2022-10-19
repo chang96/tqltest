@@ -7,7 +7,7 @@ const calculateAgeController = function(req:Request, res:Response):void{
     if(age)
     res.status(200).json({"statusCode":200, "age": age})
     else 
-    res.status(400).json({"statusCode": 400, "age": `${age}`})
+    res.status(400).json({"statusCode": 400, "age": `${age}`, "error":"invalid age parameter"})
 }
 
 export {calculateAgeController}
