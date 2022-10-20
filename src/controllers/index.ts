@@ -8,7 +8,9 @@ const calculateAgeController = function(req:Request, res:Response):void{
         else 
             res
             .status(200)
-            .send({age: null, response: {data: {error:"invalid age parameter"}}})
+            .send({
+                age: null, response: {data: {error:"invalid age parameter"}}
+            })
     
 }
 

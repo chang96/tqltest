@@ -8,8 +8,6 @@
     (check How does this work?).
 -   A wildcard matches all other routes that that does not match "/" and "/howold"
 
-
-
 # How does this work?
 This is a node js application that calculates age from date of birth in milliseconds.
 Internally, the app implements the following steps to return the above result.
