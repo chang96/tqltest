@@ -6,7 +6,7 @@ function calculateAge(timestamp: string):any{
     }
     if(isNaN(toNumber) || isNaN(validDate)){
         return null
-    } else
+    }
     return Math.abs(new Date().getFullYear() - new Date(toNumber).getUTCFullYear())
 }
 
