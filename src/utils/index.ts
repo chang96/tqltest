@@ -1,20 +1,15 @@
 function calculateAge(timestamp: string):any{
-    let toNumber:number = Number(timestamp);
-    if(isNaN(toNumber)){
-        return undefined //"invalid date of birth value"
+    let toNumber:any = Number(timestamp);
+    let validDate = new Date(toNumber).getFullYear()
+    console.log(validDate)
+    if(isNaN(toNumber) || isNaN(validDate)){
+        return null //"invalid date of birth value"
     }
-    if(toNumber > Date.now()){
-        return undefined //"Burn in the future?"
-    }
-    if(toNumber < 0){
-        return undefined //"Sorry, valid date of birth starts from January 1, 1970"
-    }
-    let currentDate:number = Date.now();
-    let currentAgeInMs = currentDate - toNumber
-    let year = 1000*60*60*24*365
-    let age = currentAgeInMs / year
-    let rounded = Math.round(age)
-    return `${rounded}`
+    console.log(new Date(toNumber))
+    let diff = Date.now()>toNumber?  Date.now() - toNumber : toNumber - Date.now()
+    let age = new Date(diff)
+    console.log(age.getUTCFullYear(), age)
+    return Math.abs(new Date().getFullYear() - new Date(toNumber).getUTCFullYear())
 }
 
 export {
